@@ -7,7 +7,12 @@ public class Calculator {
 		if(nums.isBlank())
 			sum = 0;
 		else {
-			sum += Integer.parseInt(nums);
+			String tokens[];
+			tokens = nums.split(",");
+			for(int i = 0; i<tokens.length; i++) {
+				int n = Integer.parseInt(tokens[i]);
+				sum += n;
+			}
 		}
 		
 		return sum;

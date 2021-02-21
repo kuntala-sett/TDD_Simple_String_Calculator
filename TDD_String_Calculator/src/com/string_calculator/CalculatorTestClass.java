@@ -20,7 +20,7 @@ class CalculatorTestClass {
 	
 	@Test
 	void returnSumForTwoNumbers(){
-		assertEquals(7, Calculator.add("4, 3"));
+		assertEquals(7, Calculator.add("4,3"));
 	}
 	
 }
