@@ -8,7 +8,7 @@ public class Calculator {
 			sum = 0;
 		else {
 			String tokens[];
-			tokens = nums.split(",");
+			tokens = nums.split(",|\n");
 			for(int i = 0; i<tokens.length; i++) {
 				int n = Integer.parseInt(tokens[i].trim());
 				sum += n;
