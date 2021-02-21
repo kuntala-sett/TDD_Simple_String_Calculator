@@ -63,5 +63,9 @@ class CalculatorTestClass {
 			}
 	}
 	
+	@Test
+	void ignoreGreaterThanThousand(){
+		assertEquals(30, Calculator.add("//:\n4:1005:26"));
+	}
 	
 }

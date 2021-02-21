@@ -31,7 +31,8 @@ public class Calculator {
 				}
 				
 				if(!flag_negative)
-					sum += n;
+					if(n<=1000)
+						sum += n;
 			}
 			
 			if(flag_negative) {
