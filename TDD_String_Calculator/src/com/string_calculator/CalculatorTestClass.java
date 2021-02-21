@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import Calculator.Calculator;
 
 class CalculatorTestClass {
 
@@ -32,5 +31,16 @@ class CalculatorTestClass {
 	void acceptNewlineBetweenNumbers1(){
 		assertEquals(12, Calculator.add("4, 3\n5"));
 	}
+	
+	@Test
+	void acceptNewlineBetweenAllNumbers(){
+		assertEquals(16, Calculator.add("4\n 3\n9"));
+	}
+	
+	@Test
+	void acceptCustomDelimiter(){
+		assertEquals(9, Calculator.add("//:\n4:5"));
+	}
+	
 	
 }
