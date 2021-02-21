@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-
 class CalculatorTestClass {
 
 	@Test
@@ -41,6 +40,12 @@ class CalculatorTestClass {
 	void acceptCustomDelimiter(){
 		assertEquals(9, Calculator.add("//:\n4:5"));
 	}
+	
+	@Test
+	void acceptCustomDelimiterMultiple(){
+		assertEquals(25, Calculator.add("//:\n4:5:12:4"));
+	}
+	
 	
 	
 }
