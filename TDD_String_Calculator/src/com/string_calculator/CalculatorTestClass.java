@@ -23,4 +23,9 @@ class CalculatorTestClass {
 		assertEquals(7, Calculator.add("4,3"));
 	}
 	
+	@Test
+	void returnSumForUnknownNumbers(){
+		assertEquals(2050, Calculator.add("3, 5, 6, 11, 59, 43, 55, 77, 81, 92, 101, 321, 42, 645, 342, 69, 98"));
+	}
+	
 }

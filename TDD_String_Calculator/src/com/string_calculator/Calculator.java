@@ -10,7 +10,7 @@ public class Calculator {
 			String tokens[];
 			tokens = nums.split(",");
 			for(int i = 0; i<tokens.length; i++) {
-				int n = Integer.parseInt(tokens[i]);
+				int n = Integer.parseInt(tokens[i].trim());
 				sum += n;
 			}
 		}
