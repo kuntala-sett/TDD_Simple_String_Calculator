@@ -6,6 +6,10 @@ public class Calculator {
 		int sum = 0;
 		if(nums.isBlank())
 			sum = 0;
+		else {
+			sum += Integer.parseInt(nums);
+		}
+		
 		return sum;
 	}
 }
