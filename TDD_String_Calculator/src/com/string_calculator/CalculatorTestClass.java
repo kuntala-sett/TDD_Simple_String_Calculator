@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+
 class CalculatorTestClass {
 
 	@Test
@@ -46,6 +47,21 @@ class CalculatorTestClass {
 		assertEquals(25, Calculator.add("//:\n4:5:12:4"));
 	}
 	
+	@Test
+	void acceptNewlineWithCustomDelimiter(){
+		assertEquals(23, Calculator.add("//:\n4:5\n5\n2:7"));
+	}
+	
+	@Test
+	void rejectSumOfNegatives(){
+			try {
+				Calculator.add("4,-2");
+				fail("ExceptionExpected");
+			}
+			catch (RuntimeException e) {
+				assertEquals("No Negatives Allowed : -2", e.getMessage());
+			}
+	}
 	
 	
 }

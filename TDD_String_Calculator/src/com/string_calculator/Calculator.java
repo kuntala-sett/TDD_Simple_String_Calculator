@@ -8,6 +8,8 @@ public class Calculator {
 			sum = 0;
 		else {
 			String tokens[];
+			String negatives = "";
+			boolean flag_negative = false;
 
 			if(nums.startsWith("//")) {
 				int idx = nums.indexOf("\n");
@@ -22,8 +24,20 @@ public class Calculator {
 			
 			for(int i = 0; i<tokens.length; i++) {
 				int n = Integer.parseInt(tokens[i].trim());
-				sum += n;
+
+				if(n<0) {
+					negatives += " " + n;
+					flag_negative = true;
+				}
+				
+				if(!flag_negative)
+					sum += n;
 			}
+			
+			if(flag_negative) {
+				throw new RuntimeException("No Negatives Allowed :" + negatives);
+			}
+			
 		}
 		
 		return sum;
