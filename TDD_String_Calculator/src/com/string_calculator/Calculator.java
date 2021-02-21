@@ -14,7 +14,7 @@ public class Calculator {
 			if(nums.startsWith("//")) {
 				int idx = nums.indexOf("\n");
 				String delimit = nums.substring(2,idx);
-				delimit = delimit + "|\n";
+				delimit = "\\" + delimit + "|\n";
 				String exp = nums.substring(idx+1);
 				tokens = exp.split(delimit);
 			}

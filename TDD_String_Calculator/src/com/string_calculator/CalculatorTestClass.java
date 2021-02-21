@@ -48,6 +48,11 @@ class CalculatorTestClass {
 	}
 	
 	@Test
+	void acceptCustomDelimiterMultiple2(){
+		assertEquals(25, Calculator.add("//*\n4*5\n12*4"));
+	}
+	
+	@Test
 	void acceptNewlineWithCustomDelimiter(){
 		assertEquals(23, Calculator.add("//:\n4:5\n5\n2:7"));
 	}
@@ -66,6 +71,11 @@ class CalculatorTestClass {
 	@Test
 	void ignoreGreaterThanThousand(){
 		assertEquals(30, Calculator.add("//:\n4:1005:26"));
+	}
+	
+	@Test
+	void acceptMultipleLengthCustomDelimiter(){
+		assertEquals(25, Calculator.add("//[***]\n4***5***12***4"));
 	}
 	
 }
