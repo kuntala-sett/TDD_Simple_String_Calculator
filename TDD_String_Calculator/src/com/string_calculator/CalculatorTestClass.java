@@ -43,12 +43,12 @@ class CalculatorTestClass {
 	}
 	
 	@Test
-	void acceptCustomDelimiterMultiple(){
+	void acceptCustomDelimiterMultipleTimes(){
 		assertEquals(25, Calculator.add("//:\n4:5:12:4"));
 	}
 	
 	@Test
-	void acceptCustomDelimiterMultiple2(){
+	void acceptCustomDelimiterMultipleTimes2(){
 		assertEquals(25, Calculator.add("//*\n4*5\n12*4"));
 	}
 	
@@ -77,5 +77,11 @@ class CalculatorTestClass {
 	void acceptMultipleLengthCustomDelimiter(){
 		assertEquals(25, Calculator.add("//[***]\n4***5***12***4"));
 	}
+	
+	@Test
+	void acceptMultipleCustomDelimiters(){
+		assertEquals(25, Calculator.add("//[*][%][:]\n4%5:12*4"));
+	}
+
 	
 }

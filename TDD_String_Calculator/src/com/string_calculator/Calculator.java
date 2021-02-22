@@ -18,15 +18,31 @@ public class Calculator {
 				delimit = "\\" + delimit;
 
 				if (delimit.contains("[")) {
+					int count = (int) delimit.chars().filter(ch -> ch == '[').count();
 					int idxStart = delimit.indexOf("[");
-					int idxEnd = delimit.indexOf("]");
-
-					//escaping the delimiter character
-					String tempDelimit = "\\";
-					//adding just one of the character and then + for multiple occurrence  ---> \*+
-					tempDelimit += delimit.charAt(idxStart + 1);
+					String tempDelimit = "";
+					
+					if(count>1) {	//multiple types of delimiter
+						tempDelimit += "[";
+						
+						while(count > 0) {
+							tempDelimit += delimit.charAt(idxStart+1);
+							idxStart = delimit.indexOf("[", idxStart+1);
+							count--;
+						}
+						
+						tempDelimit += "]";
+					}
+					else {	//only one type of delimiter
+						
+						//escaping the delimiter character
+						tempDelimit = "\\";
+						//adding just one of the character of the multiple occurrence of same delimiter
+						tempDelimit += delimit.charAt(idxStart + 1);
+						
+					}
+					//  Adding + for multiple occurrences
 					tempDelimit += "+";
-		
 					delimit = tempDelimit;
 				}
 
@@ -36,9 +52,6 @@ public class Calculator {
 				String numbersExpression = nums.substring(idx + 1);
 				tokens = numbersExpression.split(delimit);
 
-				
-//			    System.out.println(tokens[0]);
-//				System.out.println(tokens[2]);
 			} else {
 				tokens = nums.split(",|\n");
 			}
