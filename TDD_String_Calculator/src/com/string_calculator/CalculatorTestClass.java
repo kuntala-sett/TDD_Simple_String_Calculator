@@ -82,6 +82,16 @@ class CalculatorTestClass {
 	void acceptMultipleCustomDelimiters(){
 		assertEquals(25, Calculator.add("//[*][%][:]\n4%5:12*4"));
 	}
+	
+	@Test
+	void acceptMultipleCustomDelimiters1(){
+		assertEquals(32, Calculator.add("//[*][%][:][.][&]\n3*4.2%5:12*4&2"));
+	}
+	
+	@Test
+	void acceptMultipleCustomDelimiters2(){
+		assertEquals(30, Calculator.add("//[*][%][.]\n4.5%12*4\n5"));
+	}
 
 	
 }
